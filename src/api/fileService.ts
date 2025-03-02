@@ -1,7 +1,7 @@
 import { FileItem, FileInfo } from '../types';
 
-// const API_BASE_URL = 'https://6qzkd2jm-8000.inc1.devtunnels.ms/api';
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = 'https://6qzkd2jm-8000.inc1.devtunnels.ms/api';
+//const API_BASE_URL = 'http://127.0.0.1:8000/api';
 
 export const fetchFiles = async (folderPath: string = ''): Promise<FileItem[]> => {
   const url = folderPath ? `${API_BASE_URL}/files/${encodeURIComponent(folderPath)}` : `${API_BASE_URL}/files/`;
