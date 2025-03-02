@@ -12,8 +12,8 @@ const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
     return (
       <div className="flex justify-center">
         <img 
-          // src={`https://6qzkd2jm-8000.inc1.devtunnels.ms/api/file/${file.path}`}
-          src={`http://127.0.0.1:8000/api/file/${file.path}`}
+          src={`https://6qzkd2jm-8000.inc1.devtunnels.ms/api/file/${file.path}`}
+          //src={`http://127.0.0.1:8000/api/file/${file.path}`}
           alt={file.name}
           className="max-w-full max-h-[40vh] sm:max-h-[50vh] rounded-lg shadow-lg object-contain"
           loading="lazy"
