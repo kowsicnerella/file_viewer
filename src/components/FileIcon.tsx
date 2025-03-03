@@ -13,8 +13,8 @@ const FileIcon: React.FC<FileIconProps> = ({ fileType, fileName, size = 12, file
 
 if (fileType.startsWith('image/')){
     return (<img 
-    // src={`https://6qzkd2jm-8000.inc1.devtunnels.ms/api/file/${file.path}`}
-    src={`http://127.0.0.1:8000/api/preview/${filePath}`}
+    src={`https://6qzkd2jm-8000.inc1.devtunnels.ms/api/preview/${filePath}`}
+    //src={`http://127.0.0.1:8000/api/preview/${filePath}`}
     className="max-w-full max-h-[400vh] sm:max-h-[500vh] rounded-sm shadow-lg object-contain"
     loading="lazy"
   />);
