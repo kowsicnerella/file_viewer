@@ -95,13 +95,11 @@ const FileModal: React.FC<FileModalProps> = ({
     try {
       const fileInfo = await fetchFileInfo(targetFile.path);
       
-      setIsTransitioning(false);
+      
       setCurrentIndex(index);
       setCurrentFileInfo(fileInfo);
+      updateNavigationInfo(index);
       // Short delay to allow transition animation
-      setTimeout(() => {
-        updateNavigationInfo(index);
-      }, 300);
     } catch (error) {
       console.error("Error navigating to file:", error);
       setIsTransitioning(false);
@@ -202,8 +200,11 @@ const FileModal: React.FC<FileModalProps> = ({
                   }`}
                   aria-live="polite"
                 >
-                  {(currentFileInfo || file) && <FilePreview file={currentFileInfo || file} />}
-
+                  {(currentFileInfo || file) && 
+                    (<FilePreview 
+                    file={currentFileInfo || file} 
+                    onImageLoad={() => setIsTransitioning(false)} // Stop transition when loaded
+                  />)}
                 </div>
                 
                 {/* Next Button */}

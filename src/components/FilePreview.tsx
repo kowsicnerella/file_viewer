@@ -7,7 +7,7 @@ interface FilePreviewProps {
 }
 
 
-const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
+const FilePreview: React.FC<FilePreviewProps> = ({ file, onImageLoad }) => {
   const API_BASE_URL = 'https://6qzkd2jm-8000.inc1.devtunnels.ms/api';
   if (file.type.startsWith('image/')) {
     return (
@@ -17,6 +17,7 @@ const FilePreview: React.FC<FilePreviewProps> = ({ file }) => {
           alt={file.name}
           className="max-w-full max-h-[40vh] sm:max-h-[50vh] rounded-lg shadow-lg object-contain"
           loading="lazy"
+          onLoad={onImageLoad}
         />
       </div>
     );
